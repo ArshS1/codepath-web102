@@ -1,3 +1,4 @@
+import Event from './Event'
 import React from "react";
 
 const Calendar = () => {
@@ -19,13 +20,63 @@ const Calendar = () => {
         <tbody>
           <tr>
             <td className="time">8 am</td>
-            <td>9 am</td>
-            <td>10 am</td>
-            <td>11 am</td>
-            <td>12 pm</td>
-            <td>1 pm</td>
-            <td>2 pm</td>
-            <td>3 pm</td>
+            <Event />
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td className="time">9 am</td>
+            <Event />
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td className="time">10 am</td>
+            <Event />
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td className="time">11 am</td>
+            <Event />
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td className="time">12 pm</td>
+            <Event />
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td className="time">1 pm</td>
+            <Event />
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
           </tr>
         </tbody>
       </table>
