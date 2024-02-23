@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 320px;
+  min-height: 100vh; 
+  padding: 20px;
+}
+
+.card {
+  width: 300px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+  background: #f5f5f5;
+  margin: 0;
+  padding: 10px;
+  color: #333;
+}
+
+.Event {
+  padding: 10px;
+}
+
+.Event p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.pink {
+  background: pink;
+}
+
+.blue {
+  background: rgb(190, 219, 229);
+}
+
+.green {
+  background: rgb(202, 245, 222);
+} 
+
+.red {
+  background: rgb(229, 62, 1);
+} 
+
+.yellow {
+  background: rgb(255, 255, 0);
+}
