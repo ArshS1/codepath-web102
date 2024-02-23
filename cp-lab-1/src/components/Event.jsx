@@ -1,11 +1,11 @@
 import React from "react";
 
 const Event = (props) => {
-    return (
+  return (
     <div>
-        <td className="event">
-            <p>Test Name Event</p>
-        </td>
+      <td className={"Event " + props.color}>
+        <p>{props.event}</p>
+      </td>
     </div>
   );
 };
