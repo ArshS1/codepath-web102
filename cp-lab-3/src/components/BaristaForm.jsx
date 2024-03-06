@@ -14,7 +14,20 @@ const BaristaForm = () => {
     blended: ["yes", "turbo", "no"],
   };
 
-  const onNewDrink = () => {};
+  const onNewDrink = () => {
+    setInputs({
+      temperature: "",
+      milk: "",
+      syrup: "",
+      blended: "",
+    });
+
+    getNextDrink();
+  };
+
+  const getNextDrink = () => {};
+
+  let randomDrinkIndex = Math.floor(Math.random() * drinksJson.drinks.length);
 
   const onCheckAnswer = () => {};
 
@@ -49,6 +62,17 @@ const BaristaForm = () => {
         choices={ingredients["temperature"]}
         checked={inputs["temperature"]}
       />
+
+      <div className="drink-container">
+        <h2 className="mini-header">{currentDrink}</h2>
+        <button
+          type="new-drink-button"
+          className="button newdrink"
+          onClick={onNewDrink}
+        >
+          🔄
+        </button>
+      </div>
     </div>
   );
 };
