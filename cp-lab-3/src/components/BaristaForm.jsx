@@ -7,10 +7,10 @@ const BaristaForm = () => {
     blended: "",
   });
 
-  const [correct_temp, setCheckedTemperature] = useState('');
-const [correct_syrup, setCheckedSyrup] = useState('');
-const [correct_milk, setCheckedMilk] = useState('');
-const [correct_blended, setCheckedBlended] = useState('');
+  const [correct_temp, setCheckedTemperature] = useState("");
+  const [correct_syrup, setCheckedSyrup] = useState("");
+  const [correct_milk, setCheckedMilk] = useState("");
+  const [correct_blended, setCheckedBlended] = useState("");
 
   const ingredients = {
     temperature: ["hot", "lukewarm", "cold"],
@@ -27,10 +27,10 @@ const [correct_blended, setCheckedBlended] = useState('');
       blended: "",
     });
 
-    setCheckedTemperature('');
-setCheckedSyrup('');
-setCheckedMilk('');
-setCheckedBlended('');
+    setCheckedTemperature("");
+    setCheckedSyrup("");
+    setCheckedMilk("");
+    setCheckedBlended("");
 
     getNextDrink();
   };
@@ -42,7 +42,7 @@ setCheckedBlended('');
   const onCheckAnswer = () => {};
 
   return (
-    <div>
+    <form className="container">
       <h2>Hi, I'd like to order a:</h2>
 
       <form>// we will fill this in soon!</form>
@@ -59,31 +59,24 @@ setCheckedBlended('');
         New Drink
       </button>
 
-      <h3>Temperature</h3>
-      <div className="answer-space">{inputs["temperature"]}</div>
-      <RecipeChoices
-        handleChange={(e) =>
-          setInputs((prevState) => ({
-            ...prevState,
-            [e.target.name]: e.target.value,
-          }))
-        }
-        label="temperature"
-        choices={ingredients["temperature"]}
-        checked={inputs["temperature"]}
-      />
-
-      <div className="drink-container">
-        <h2 className="mini-header">{currentDrink}</h2>
-        <button
-          type="new-drink-button"
-          className="button newdrink"
-          onClick={onNewDrink}
-        >
-          🔄
-        </button>
+      <div className="mini-container">
+        <h3>Temperature</h3>
+        <div className="answer-space" id={correct_temp}>
+          {inputs["temperature"]}
+        </div>
+        <RecipeChoices
+          handleChange={(e) =>
+            setInputs((prevState) => ({
+              ...prevState,
+              [e.target.name]: e.target.value,
+            }))
+          }
+          label="temperature"
+          choices={ingredients["temperature"]}
+          currentVal={inputs["temperature"]}
+        />
       </div>
-    </div>
+    </form>
   );
 };
 
