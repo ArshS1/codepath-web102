@@ -7,6 +7,11 @@ const BaristaForm = () => {
     blended: "",
   });
 
+  const [correct_temp, setCheckedTemperature] = useState('');
+const [correct_syrup, setCheckedSyrup] = useState('');
+const [correct_milk, setCheckedMilk] = useState('');
+const [correct_blended, setCheckedBlended] = useState('');
+
   const ingredients = {
     temperature: ["hot", "lukewarm", "cold"],
     syrup: ["mocha", "vanilla", "toffee", "maple", "caramel", "other", "none"],
@@ -21,6 +26,11 @@ const BaristaForm = () => {
       syrup: "",
       blended: "",
     });
+
+    setCheckedTemperature('');
+setCheckedSyrup('');
+setCheckedMilk('');
+setCheckedBlended('');
 
     getNextDrink();
   };
