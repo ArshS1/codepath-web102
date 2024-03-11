@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import APIForm from './components/APIForm';
+import Gallery from './components/Gallery';
 
 function App() {
   const [inputs, setInputs] = useState({
@@ -13,6 +14,9 @@ function App() {
   });
 
   const [currentImage, setCurrentImage] = useState(null);
+
+  const [prevImages, setPrevImages] = useState([]);
+
 
   const ACCESS_KEY = import.meta.env.VITE_APP_ACCESS_KEY;
 
@@ -89,6 +93,9 @@ function App() {
   return (
     <div className="whole-page">
       <h1>Build Your Own Screenshot! 📸</h1>
+      <div className="container">
+  <Gallery images={prevImages} />
+</div>
       <h3> Current Query Status: </h3>
   <p>
     https://api.apiflash.com/v1/urltoimage?access_key=ACCESS_KEY    
