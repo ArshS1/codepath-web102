@@ -30,16 +30,20 @@ function App() {
     });
   };
 
-  const callAPI = async (query) => {
-    const response = await fetch(query);
+  const callAPI = async () => {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts');
     const json = await response.json();
-    if (json.url == null) {
+    if (json.length === 0) {
       alert("Oops! Something went wrong with that query, let's try again!");
     } else {
-      setCurrentImage(json.url);
+      setCurrentImage(json); // assuming currentImage state is used to store the fetched data
       reset();
     }
   };
+
+  useEffect(() => {
+    callAPI();
+  }, []);
 
   const inputsInfo = [
     "Input a link to any website you would like to take a screenshot of. Do not include https or any protocol in the URL",
