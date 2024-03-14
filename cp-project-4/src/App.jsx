@@ -1,7 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
-import APIForm from "./components/APIForm";
-import Gallery from "./components/Gallery";
 
 function App() {
   const [inputs, setInputs] = useState({
@@ -31,8 +29,9 @@ function App() {
   };
 
   const callAPI = async () => {
-    const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+    const response = await fetch("https://jsonplaceholder.typicode.com/posts");
     const json = await response.json();
+    console.log(response, json);
     if (json.length === 0) {
       alert("Oops! Something went wrong with that query, let's try again!");
     } else {
@@ -88,45 +87,22 @@ function App() {
 
   return (
     <div className="whole-page">
-      <h1>Build Your Own Screenshot! 📸</h1>
-      <div className="container">
-        <Gallery images={prevImages} />
+      <div>
+        <button onClick={callAPI}>Fetch new post</button>
+        {currentImage && (
+          <div>
+            <h2>{currentImage.title}</h2>
+            <p>{currentImage.body}</p>
+            <img
+              src={`https://via.placeholder.com/150?text=${currentImage.id}`}
+              alt="placeholder"
+            />
+            <button onClick={() => addToBanList(currentImage.id)}>
+              Ban this post
+            </button>
+          </div>
+        )}
       </div>
-      <h3> Current Query Status: </h3>
-      <p>
-        https://api.apiflash.com/v1/urltoimage?access_key=ACCESS_KEY
-        <br></br>
-        &url={inputs.url} <br></br>
-        &format={inputs.format} <br></br>
-        &width={inputs.width}
-        <br></br>
-        &height={inputs.height}
-        <br></br>
-        &no_cookie_banners={inputs.no_cookie_banners}
-        <br></br>
-        &no_ads={inputs.no_ads}
-        <br></br>
-      </p>
-      <APIForm
-        inputs={inputs}
-        handleChange={(e) =>
-          setInputs((prevState) => ({
-            ...prevState,
-            [e.target.name]: e.target.value.trim(),
-          }))
-        }
-        onSubmit={submitForm}
-      />
-      <br></br>
-      {currentImage ? (
-        <img
-          className="screenshot"
-          src={currentImage}
-          alt="Screenshot returned"
-        />
-      ) : (
-        <div> </div>
-      )}
     </div>
   );
 }
