@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+
 import CoinInfo from "./components/CoinInfo";
 import "./App.css";
 
@@ -37,6 +38,8 @@ function App() {
 
   return (
     <>
+
+    
       <div className="whole-page">
         <h1>My Crypto List</h1>
         <input
