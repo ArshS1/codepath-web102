@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from './routes/Layout';
+import DetailView from './routes/DetailView';
 
 
 import React from 'react'
