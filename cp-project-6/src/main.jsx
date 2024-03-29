@@ -19,12 +19,12 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <main style={{ padding: "1rem" }}>
             <p>There's nothing here!</p>
             <Link to={`/detail/${list.Data[coin].Symbol}`}>
-  <CoinInfo
-    image={list.Data[coin].ImageUrl}
-    name={list.Data[coin].FullName}
-    symbol={list.Data[coin].Symbol}
-  />
-</Link>
+              <CoinInfo
+                image={list.Data[coin].ImageUrl}
+                name={list.Data[coin].FullName}
+                symbol={list.Data[coin].Symbol}
+              />
+            </Link>
           </main>
         }
       />{" "}

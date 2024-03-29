@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 
 import CoinInfo from "./components/CoinInfo";
 import "./App.css";
@@ -40,8 +40,6 @@ function App() {
 
   return (
     <>
-
-    
       <div className="whole-page">
         <h1>My Crypto List</h1>
         <input
